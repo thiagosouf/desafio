@@ -20,10 +20,16 @@
 
     $result = mysqli_query($conexao, "INSERT INTO cadastro (Nome,CPF,Email,Telefone,Sexo,DtNascimento,Cidade,Estado,outros) 
     VALUES ('$nome', '$cpf', '$email', '$telefone', '$sexo', '$nasc', '$cidade', '$estado', '$hoje')");
-    //colocar aspas simples nas variaveis
 
+    if ($result == TRUE){
+            echo "SUCESSO";
+            header("Location: index.html");
+        }
+        else{
+            echo "ERRO";
+            header("Location: cadastro.html");
+        }
 
-    
 
 
     // TESTES
